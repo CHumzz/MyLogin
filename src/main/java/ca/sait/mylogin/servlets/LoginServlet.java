@@ -33,6 +33,8 @@ public class LoginServlet extends HttpServlet {
         
             if(query != null && query.contains("logout")){      
                 session.invalidate();
+                
+                request.setAttribute("message", "You are logged out.");
             } else {
                 response.sendRedirect("home");
             return;
