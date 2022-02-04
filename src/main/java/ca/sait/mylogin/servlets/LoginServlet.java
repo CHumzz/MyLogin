@@ -25,8 +25,7 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {       
         String query = request.getQueryString();
         
-        if(query != null && query.contains("logout")){
-            
+        if(query != null && query.contains("logout")){      
             
         }
         
@@ -44,6 +43,13 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        
+        if( username == null || username.isEmpty()|| password == null || password.isEmpty()){
+            request.setAttribute("message", "Username and/or password is missing");
+        }
+        
         getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
     }
 }
