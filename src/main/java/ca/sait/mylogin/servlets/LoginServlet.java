@@ -22,8 +22,15 @@ public class LoginServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
+            throws ServletException, IOException {       
+        String query = request.getQueryString();
+        
+        if(query != null && query.contains("logout")){
+            
+            
+        }
+        
+        getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
     }
 
     /**
@@ -37,6 +44,6 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
     }
 }

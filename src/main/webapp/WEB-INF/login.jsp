@@ -7,5 +7,18 @@
     </head>
     <body>
         <h1>Login</h1>
+        
+        <form action="login" method = "post">
+            <P> 
+                <label for="username">Username: </label>
+                <input type="text" name="username" id="username">
+                <br>
+                <label for="password">Password: </label>
+                <input type="password" name="password" id="password">
+            </P>
+        
+            <button type="submit">Log in</button>
+        </form>
+        
     </body>
 </html>
